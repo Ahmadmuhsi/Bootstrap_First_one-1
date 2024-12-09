@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(270deg,red, yellow);
+            background-size: 1400% 1400%;
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+            animation: bouncing 2s infinite, flow 4s ease infinite;
+            position: absolute;
+        }
+
+        .ball:hover {
+            transition: ease;
+            background: linear-gradient(to right, blue, yellow);
+        }
+
+        @keyframes bouncing {
+            0% {
+                top: 100px;
+            }
+
+            50% {
+                top: 550px;
+            }
+
+            100% {
+                top: 100px;
+            }
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(270deg,white,black);
+            background-size: 1400% 1400%;
+            animation: rotateBox 5s linear infinite, flow 4s ease infinite;
+        }
+
+        @keyframes rotateBox {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes flow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+    <div class="box"></div>
+</body>
+
+</html>
